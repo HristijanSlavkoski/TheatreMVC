@@ -17,24 +17,30 @@
                 $this->dbHandler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $this->dbHandler->setAttribute(PDO::ATTR_PERSISTENT, true);
 
-                $sql = "CREATE DATABASE IF NOT EXISTS " . $this->dbName;
-                $this->dbHandler->exec($sql);
-                echo "Database created successfully\n";
+               // $sql = "CREATE DATABASE IF NOT EXISTS " . $this->dbName;
+               // $this->dbHandler->exec($sql);
+               // echo "Database created successfully\n";
 
-                $sql = "use " .$this->dbName;
-                $this->dbHandler->exec($sql);
+             //   $sql = "use " .$this->dbName;
+              //  $this->dbHandler->exec($sql);
+                  
+
+
+                 $sql = file_get_contents('../app/core/file.sql');
+
 
                 //uboo ke e ako mojme vo poseben fajl da gi izvajme
                 //site tableti i samo da go povikame ovde toj file
                 //mozhe toa da se napravi lesno e ama poleka 😉
-                $sql = "CREATE TABLE IF NOT EXISTS user (
+              /*  $sql = "CREATE TABLE IF NOT EXISTS user (
                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                     username VARCHAR(255) NOT NULL,
                     email VARCHAR(255),
                     password VARCHAR(255) NOT NULL
                     )";
+                    */
                 $this->dbHandler->exec($sql);
-                echo "Table created successfully\n";
+                echo "Fine\n";
 
             } catch (PDOException $e) {
                 $this->error = $e->getMessage();
