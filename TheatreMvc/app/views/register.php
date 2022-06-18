@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <form id="register-form" method="POST" action="<?php  ?>https://localhost/TheatreMvc/TheatreMvc/public/home/register">
+        <form id="register-form" method="POST" action="<?php  ?>https://localhost/TheatreMVC/TheatreMvc/public/home/register">
             <input type="text" placeholder="Username *" name="username">
             <span class="invalidFeedback">
                 <?php echo $data['usernameError']; ?>
