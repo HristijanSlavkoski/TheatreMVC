@@ -40,8 +40,6 @@
                     )";
                     */
                 $this->dbHandler->exec($sql);
-                echo "Fine\n";
-
             } catch (PDOException $e) {
                 $this->error = $e->getMessage();
 

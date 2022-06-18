@@ -108,7 +108,7 @@ class Home extends Controller
                     //Register user from model function
                     if ($this->userModel->register($data)) {
                         //Redirect to the login page
-                        header('location: ' . URLROOT . '/public/home/index/Done');
+                        header('location: ' . URLROOT . '/public/home/login');
                     } else {
                         die('Something went wrong.');
                     }
