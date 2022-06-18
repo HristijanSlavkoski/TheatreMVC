@@ -10,7 +10,7 @@ class actors extends Controller
     {
      
        $result= $this->db->query('SELECT * FROM actors  ');
-       
-       $this->view('home/actors',compact('result'));
+       $data=$this->db->resultSet();
+       $this->view('home/actors',$data);
     }
 }
