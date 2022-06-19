@@ -12,7 +12,8 @@
 CREATE TABLE IF NOT EXISTS actors (
     id INT(6)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
-    Surname VARCHAR (255) NOT NULL
+    Surname VARCHAR (255) NOT NULL,
+    ImageUrl TEXT
 );
 
 CREATE TABLE IF NOT EXISTS shows (
@@ -27,25 +28,29 @@ CREATE TABLE IF NOT EXISTS shows (
 INSERT IGNORE INTO actors (
     id,
     Name,
-    Surname
+    Surname,
+    ImageUrl
 )
 VALUES
     (
         1,
         'Antonio',
-        'Nikoloski'
+        'Nikoloski',
+        '/opt/lampp/htdocs/TheatreMVC/TheatreMvc/public/css/prv.jpg'
        
     ),
     (
         2,
         'Hristijan',
-        'Slavkoski'
+        'Slavkoski',
+        'prv.jpg'
         
     ),
     (
         3,
         'Petar ',
-        'Poposki'
+        'Poposki',
+        'prv.jpg'
         
     );
 
