@@ -36,7 +36,7 @@ VALUES
         1,
         'Antonio',
         'Nikoloski',
-        '/opt/lampp/htdocs/TheatreMVC/TheatreMvc/public/css/prv.jpg'
+        '../../public/css/prv.jpg'
        
     ),
     (

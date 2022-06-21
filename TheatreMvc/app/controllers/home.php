@@ -55,7 +55,10 @@ class Home extends Controller
                 $result = $this->db->resultSet();
                 $userPassword = array_column($result, 'password');
                 if(password_verify($data['password'],$userPassword[0])){
-                    header('location: ' . URLROOT . '/public/home/index/done');
+                    session_start();
+	                // Add values to the session.
+	                 $_SESSION['loggedUser'] = $data['username']; // string
+                    header('location: ' . URLROOT . '/public/actors/show');
                 } else {
                     die('Wrong password');
                 }
@@ -63,6 +66,14 @@ class Home extends Controller
         }
         $this->view('home/login', $data);
     }
+
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        header('location: ' . URLROOT . '/public/actors/show');
+    }
+
     public function register()
     {     
         $data = [
