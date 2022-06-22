@@ -1,8 +1,7 @@
+CREATE DATABASE IF NOT EXISTS theatre;
  
- CREATE DATABASE IF NOT EXISTS theatre;
- 
- USE theatre;
- CREATE TABLE IF NOT EXISTS user (
+USE theatre;
+CREATE TABLE IF NOT EXISTS user (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255),
@@ -22,7 +21,8 @@ CREATE TABLE IF NOT EXISTS shows (
     genre VARCHAR (255) NOT NULL,
     date DATE NOT NULL,
     time TIME NOT NULL,
-    duration INT(6) NOT NULL
+    duration INT(6) NOT NULL,
+    imageUrl TEXT
 );
 
 INSERT IGNORE INTO actors (
@@ -34,24 +34,47 @@ INSERT IGNORE INTO actors (
 VALUES
     (
         1,
-        'Antonio',
-        'Nikoloski',
-        '../../public/css/prv.jpg'
+        'Ана',
+        'Стојановска',
+        '../../public/media/AnaStojanovska.jpg'
        
     ),
     (
         2,
-        'Hristijan',
-        'Slavkoski',
-        'prv.jpg'
+        'Борче',
+        'Начев',
+        '../../public/media/BorcheNachev.jpg'
         
     ),
     (
         3,
-        'Petar ',
-        'Poposki',
-        'prv.jpg'
-        
+        'Габриела',
+        'Петрушевска',
+        '../../public/media/GabrielaPetrushevska.jpg'
+    ),
+    (
+        4,
+        'Јасмина',
+        'Поповска',
+        '../../public/media/JasminaPopovska.jpg'   
+    ),
+    (
+        5,
+        'Јелена',
+        'Јованова',
+        '../../public/media/JelenaJovanova.jpg'
+    ),
+    (
+        6,
+        'Јордан',
+        'Симонов',
+        '../../public/media/JordanSimonov.jpg'
+    ),
+    (
+        7,
+        'Весна',
+        'Гаврил-Тапшановска',
+        '../../public/media/VesnaGavrilTapshanovska.jpg'
     );
 
 INSERT IGNORE INTO shows (
@@ -60,38 +83,52 @@ INSERT IGNORE INTO shows (
     genre,
     date,
     time,
-    duration
+    duration,
+    imageUrl
 )
 VALUES
     (
         1,
-        'Crvenkapa',
-        'Komedija',
+        'Црвенкапа',
+        'Детска',
         "2022-06-20",
         "20:00:00",
-        "122"
+        "122",
+        '../../public/media/crvenkapa.jpg'
     ),
     (
         2,
-        'Zoki Poki',
-        'Horor',
+        'Не се клади на енглези',
+        'Комедија',
         '2022-05-21',
         '15:30:00',
-        '140'
+        '140',
+        '../../public/media/neSeKladiNaEnglezi.jpg'
     ),
     (
         3,
-        'Devojkite na Marko',
-        'Akcija',
-        '2022-06-25',
-        '10:25:00',
-        '80'
+        'Втората смена',
+        'Авантура',
+        '2022-03-10',
+        '15:30:00',
+        '84',
+        '../../public/media/vtorataSmena.jpg'
     ),
     (
         4,
-        'Vtorata smena',
-        'Komedija',
-        '2022-03-10',
-        '15:30:00',
-        '84'
-    );      
+        'Чекајќи го Годо',
+        'Апсурд',
+        '2022-05-15',
+        '20:00:00',
+        "130",
+        '../../public/media/cekajkiGoGodo.jpg'
+    ),
+    (
+        5,
+        'Хамлет',
+        'Трагедија',
+        '2022-05-16',
+        '20:00:00',
+        "142",
+        '../../public/media/hamlet.jpg'
+    )

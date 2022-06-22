@@ -8,18 +8,42 @@ html {
     font-family: 'Lato', sans-serif;
 }
 body {
-    background-image: url('8728.jpg');
+    color: white;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)), url('8728.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
+    background-color: transparent;
+}
+
+h1 {
+    color: white;
+}
+.navbar {
+overflow: hidden;
+position: sticky;
+top: 0;
+width: 100%;
+}
+
+.navbar a {
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
 
 .top-nav {
     display: block;
+    margin-bottom: 5%;
 }
 
 .top-nav ul {
     margin: 0;
+    margin-right: 4%;
     padding: 0;
     position: absolute;
     right: 6%;
@@ -40,15 +64,6 @@ body {
 .top-nav ul li a:hover {
     color: #afafaf;
     transition: 0.15s ease-in;
-}
-
-#section-landing {
-    background: url('8728.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
 }
 
 .wrapper-landing {
@@ -82,8 +97,7 @@ body {
 .navbar {
     width: 100%;
     height: 70px;
-    background-color: #1a1a1a;
-    box-shadow: 0px 0px 10px #1a1a1a;
+    z-index: 1;
 }
 
 .container-login {
@@ -128,6 +142,7 @@ input::placeholder {
     color: #ffffff;
     font-size: 20px;
     margin: 20px 0px 0px 0px;
+    justify-content: center;
 }
 
 #submit:hover {
@@ -149,4 +164,18 @@ input::placeholder {
 .invalidFeedback {
     color: #ff0000;
     display: block;
+}
+
+.list {
+    margin-top: 3%;
+    display: list-item;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 400;
+    stroke: #a1a1a1;
+}
+
+table {
+    color: black;
 }

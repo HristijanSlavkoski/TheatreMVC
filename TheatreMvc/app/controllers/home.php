@@ -14,7 +14,12 @@ class Home extends Controller
          $user->name=$name;
   
          $this->view('home/index',['name'=>$user->name]);
-    }   
+    }
+    
+    public function dashboard()
+    {
+        $this->view('home/dashboard');
+    }
 
     public function login()
     {
@@ -58,7 +63,7 @@ class Home extends Controller
                     session_start();
 	                // Add values to the session.
 	                 $_SESSION['loggedUser'] = $data['username']; // string
-                    header('location: ' . URLROOT . '/public/actors/show');
+                    header('location: ' . URLROOT . '/public/home/dashboard');
                 } else {
                     die('Wrong password');
                 }
@@ -71,7 +76,7 @@ class Home extends Controller
     {
         session_start();
         session_unset();
-        header('location: ' . URLROOT . '/public/actors/show');
+        header('location: ' . URLROOT . '/public/home/dashboard');
     }
 
     public function register()

@@ -12,4 +12,4 @@
     define('URLROOT', 'http://localhost/TheatreMVC/TheatreMvc');
 
     //Sitename
-    define('SITENAME', 'Login & Register script');
+    define('SITENAME', 'Theatre');

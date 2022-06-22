@@ -1,24 +1,37 @@
-
-<?php
-   require APPROOT . '/views/includes/navigation.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Actors</title>
-   </head>
+   <?php
+      require APPROOT . '/views/includes/head.php';
+   ?>
    <body>
+      <?php
+         require APPROOT . '/views/includes/navigation.php';
+      ?>
       <div class="list">
-         <div class="item">
-            <?php
-               require APPROOT . '/views/includes/head.php';
-               $idCats = array_column($data, 'ImageUrl');
-               echo "<img src=".$idCats[0]." alt=\"AKTERKA\" width=\"500\" height=\"600\"";
-            ?>
+         <div>
+            Ова се актерите кои во моментов ја оддржуваат уметноста во нашиот прекрасен град Прилеп
          </div>
+         <table width="100%" border="1px">
+            <tr>
+               <th>Име</th>
+               <th>Презиме</th>
+               <th></th>
+            </tr>
+            <?php
+               $firstName = array_column($data, 'Name');
+               $lastName = array_column($data, 'Surname');
+               $imageId = array_column($data, 'ImageUrl');
+               for ($i = 0; $i < count($firstName); $i++) {
+            ?>
+            <tr align="center">
+               <td><?php echo $firstName[$i];?></td>
+               <td><?php echo $lastName[$i]; ?></td>
+               <td><?php echo "<img src=".$imageId[$i]." alt=\"ActorShow\" width=\"100\" height=\"100\">"; ?></td>
+            </tr>
+            <?php
+               }
+            ?>
+         </table>        
       </div>
    </body>
 </html>
