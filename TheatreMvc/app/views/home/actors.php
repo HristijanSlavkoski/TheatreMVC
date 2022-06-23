@@ -8,9 +8,7 @@
          require APPROOT . '/views/includes/navigation.php';
       ?>
       <div class="list">
-         <div>
-            Ова се актерите кои во моментов ја оддржуваат уметноста во нашиот прекрасен град Прилеп
-         </div>
+         
          <table width="100%" border="1px">
             <tr>
                <th>Име</th>

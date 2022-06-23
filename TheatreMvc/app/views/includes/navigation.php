@@ -10,6 +10,9 @@
             <li>
                 <a href="<?php echo URLROOT; ?>/public/shows/show">Претстави</a>
             </li>
+            <li>
+                <a href="<?php echo URLROOT; ?>/public/shows/buyticket">Купи билет</a>
+            </li>
         
             <li class="btn-login">
                 <?php 

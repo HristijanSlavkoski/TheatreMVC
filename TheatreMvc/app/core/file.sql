@@ -131,4 +131,25 @@ VALUES
         '20:00:00',
         "142",
         '../../public/media/hamlet.jpg'
-    )
+    );
+ CREATE TABLE IF NOT EXISTS seats (
+ id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  seat_boolean  INT(6) 
+);
+INSERT IGNORE INTO seats (
+    id,
+    seat_boolean
+)
+VALUES
+    (
+        1,
+        0
+    ),
+    (
+        2,
+        0
+    ),
+    (
+        3,
+        0
+    );
