@@ -22,10 +22,15 @@
 
                 //Create 1 admin user
                 $hash = password_hash('admin', PASSWORD_DEFAULT);
+                //Or we can just use INSERT IGNORE
                 $sql = 'INSERT INTO user (id, username, email, password) VALUES (\'1\', \'admin\', \'admin@admin.com\', \''.$hash.'\') ON DUPLICATE KEY UPDATE id=id';
-                
                 $this->dbHandler->exec($sql);
 
+                //Set all seats on 0 at start;
+                for ($i = 0; $i < 48; $i++) {
+                    $sql = 'INSERT INTO seats (id, seat_boolean) VALUES ('. $i. ', 1) ON DUPLICATE KEY UPDATE id=id';
+                    $this->dbHandler->exec($sql);
+                }
             } catch (PDOException $e) {
                 $this->error = $e->getMessage();
 

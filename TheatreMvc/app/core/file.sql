@@ -136,20 +136,3 @@ VALUES
  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   seat_boolean  INT(6) 
 );
-INSERT IGNORE INTO seats (
-    id,
-    seat_boolean
-)
-VALUES
-    (
-        1,
-        0
-    ),
-    (
-        2,
-        0
-    ),
-    (
-        3,
-        0
-    );
