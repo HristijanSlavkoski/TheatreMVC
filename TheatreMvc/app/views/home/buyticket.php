@@ -41,12 +41,20 @@
       </div>
       <?php
         for ($i = 0; $i < 6; $i++) {
-          ?>
+          ?> 
           <div class="row">
             <?php
               for ($j = 0; $j < 8; $j++) {
                 ?>
-                  <button id="<?php echo (8*$i+$j+1); ?>" class="seat" onclick="reserveSeat(this)"></button>
+                  <button id="<?php echo (8*$i+$j+1); ?>" class="<?php 
+                     $a=(end($data)[8*$i+$j]->seat_boolean);
+                     if($a==0)
+                     {
+                      echo "seat";
+                     } 
+                     else {
+                      echo "seat-sold";
+                     } ?>" onclick="reserveSeat(this)"></button>
                 <?php
               }
             ?>
@@ -57,17 +65,13 @@
     </div>
     <button id="reserveSeats" onclick="reserveSeats()">Резервирај бители</button>
     <p class="text">
-      <?php  echo $data[5] ?>
+   
     </p>
   </body>
 </html>
 
 
-<form action="<?php  ?>https://localhost/TheatreMVC/TheatreMvc/public/shows/buyticket">
-         
-         <button type="submit" class="seat" id="2" name="1" value=2>
- 
-         </form>
+
 
 <script>  
   function reserveSeat(seat) {
@@ -89,8 +93,8 @@
       //url: '../controllers/shows.php',
       data: {seatNumbersString: seatNumbersString},
       success: function (data) {
-         //alert("SUCCESS");
-         location.reload();
+        location.reload()
+       
       },
       error: function (xhr, status, error) {
         alert("ERROR");

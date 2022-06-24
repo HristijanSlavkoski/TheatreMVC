@@ -27,8 +27,8 @@
                 $this->dbHandler->exec($sql);
 
                 //Set all seats on 0 at start;
-                for ($i = 0; $i < 48; $i++) {
-                    $sql = 'INSERT INTO seats (id, seat_boolean) VALUES ('. $i. ', 1) ON DUPLICATE KEY UPDATE id=id';
+                for ($i = 1; $i <=48; $i++) {
+                    $sql = 'INSERT INTO seats (id, seat_boolean) VALUES ('. $i. ', 0) ON DUPLICATE KEY UPDATE id=id';
                     $this->dbHandler->exec($sql);
                 }
             } catch (PDOException $e) {
