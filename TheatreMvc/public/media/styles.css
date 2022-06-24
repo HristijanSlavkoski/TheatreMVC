@@ -189,15 +189,10 @@ table {
  
 }
 
-th,
-td {
+th, td {
     border-bottom: 3px solid #d45757;
     padding: 10px 20px;
     font-size: 30px;
-  
-
-  
-    
 }
 
 td img {
@@ -240,4 +235,29 @@ td button {
 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.map {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-left: 35%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: inline-flex;
+    font-size: xx-large;
+}
+
+.dashboardText {
+    text-align: center;
+    margin-top: 15%;
+    font-size: 80px;
+    color: rgb(250, 50, 15);
+}
+
+.dashboardText:hover {
+    color: rgb(194, 29, 0);
+    transition: 0.15s ease-in;
+    font-size: 88px;
 }
